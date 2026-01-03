@@ -1,0 +1,10 @@
+apiVersion: v2
+name: todo-kafka
+description: Kafka Pub/Sub for Todo Application
+type: application
+version: 1.0.0
+appVersion: "latest"
+keywords:
+  - kafka
+  - messaging
+  - event-streaming

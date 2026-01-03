@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "todo-kafka.fullname" . }}-zookeeper
+spec:
+  serviceName: {{ include "todo-kafka.fullname" . }}-zookeeper
+  replicas: {{ .Values.zookeeper.replicas }}
+  selector:
+    matchLabels:
+      app: zookeeper
+  template:
+    metadata:
+      labels:
+        app: zookeeper
+    spec:
+      containers:
+      - name: zookeeper
+        image: {{ .Values.zookeeper.image }}
+        ports:
+        - containerPort: {{ .Values.zookeeper.port }}
+        env:
+        - name: ZOO_CFG_DYNAMIC_CONFIGDIR
+          value: /conf
+        resources:
+          {{- toYaml .Values.zookeeper.resources | nindent 10 }}

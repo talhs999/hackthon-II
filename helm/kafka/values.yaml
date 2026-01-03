@@ -1,0 +1,40 @@
+kafka:
+  replicas: 1
+  image: confluentinc/cp-kafka:7.5.0
+  broker:
+    port: 9092
+    jmxPort: 9999
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
+
+zookeeper:
+  replicas: 1
+  image: confluentinc/cp-zookeeper:7.5.0
+  port: 2181
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "100m"
+    limits:
+      memory: "512Mi"
+      cpu: "250m"
+
+topics:
+  - name: "task-events"
+    partitions: 3
+    replication: 1
+  - name: "reminders"
+    partitions: 1
+    replication: 1
+  - name: "task-updates"
+    partitions: 3
+    replication: 1
+
+persistence:
+  enabled: false
+  size: 10Gi
