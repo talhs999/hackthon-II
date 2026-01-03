@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+.venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+.next/
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Docker
+.dockerignore
+
+# Minikube
+.minikube/
+
+# Helm
+.helm/
+
+# Testing
+coverage/
+.coverage
+
+# Temporary
+tmp/
+temp/

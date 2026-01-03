@@ -1,0 +1,2 @@
+# No external dependencies required for the basic console app
+# Uses only Python standard library
